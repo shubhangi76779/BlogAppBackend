@@ -23,18 +23,15 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 // ✅ CORS
-const allowedOrigins = [
-  // "http://localhost:5173",
-  // "http://localhost:4173",
-  "https://blogappfrontend-3owb.onrender.com",
-  // process.env.FRONTEND_SERVER_PROD || "",
-].filter(Boolean); // Remove empty strings
-
 const corsOptions = {
-  origin: "*",
-  credentials: true,
+  origin: 'https://blogappfrontend-3owb.onrender.com',
+  credentials: true,                    // allow cookies/auth headers
+  methods: ['GET','HEAD','PUT','PATCH','POST','DELETE','OPTIONS'],
+  allowedHeaders: ['Content-Type','Authorization']
 };
+
 app.use(cors(corsOptions));
+app.options('*', cors(corsOptions));    // enable pre-flight for all routes
 
 // ✅ Cloudinary check
 if (
