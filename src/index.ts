@@ -24,10 +24,10 @@ app.use(cookieParser());
 
 // ✅ CORS
 const allowedOrigins = [
-  "http://localhost:5173",
-  "http://localhost:4173",
+  // "http://localhost:5173",
+  // "http://localhost:4173",
   "https://blogappfrontend-3owb.onrender.com",
-  process.env.FRONTEND_SERVER_PROD || "",
+  // process.env.FRONTEND_SERVER_PROD || "",
 ].filter(Boolean); // Remove empty strings
 
 const corsOptions = {
