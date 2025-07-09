@@ -1,4 +1,4 @@
-import express from "express";
+*import express from "express";
 import dotenv from "dotenv";
 import path from "path";
 import cors from "cors";
@@ -31,10 +31,10 @@ const allowedOrigins = [
 ].filter(Boolean); // Remove empty strings
 
 const corsOptions = {
-  origin: allowedOrigins,
+  origin: "*",
   credentials: true,
 };
-app.use(cors());
+app.use(cors(corsOptions));
 
 // ✅ Cloudinary check
 if (
