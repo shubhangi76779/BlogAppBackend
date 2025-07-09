@@ -34,7 +34,7 @@ const corsOptions = {
   origin: allowedOrigins,
   credentials: true,
 };
-app.use(cors(corsOptions));
+app.use(cors());
 
 // ✅ Cloudinary check
 if (
