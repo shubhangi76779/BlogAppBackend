@@ -1,4 +1,4 @@
-*import express from "express";
+import express from "express";
 import dotenv from "dotenv";
 import path from "path";
 import cors from "cors";
