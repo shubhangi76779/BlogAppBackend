@@ -26,6 +26,7 @@ app.use(cookieParser());
 const allowedOrigins = [
   "http://localhost:5173",
   "http://localhost:4173",
+  "https://blogappfrontend-3owb.onrender.com",
   process.env.FRONTEND_SERVER_PROD || "",
 ].filter(Boolean); // Remove empty strings
 
