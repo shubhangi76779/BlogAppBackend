@@ -42,7 +42,7 @@ if (
   console.error("❌ Missing Cloudinary environment variables!");
   process.exit(1); // Fail early to avoid timeout
 }
-
+console.log(process.env)
 cloudinary.config({
   cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
   api_key: process.env.CLOUDINARY_API_KEY,
