@@ -65,15 +65,12 @@ app.use("/auth", authRoutes);
 app.use("/comments", commentsRoutes);
 app.use(errorMiddleware);
 
-// ✅ Optional: Serve frontend (if you build it into the same app)
-if (process.env.NODE_ENV === "production") {
-  const clientPath = path.join(__dirname, "../frontend/dist");
-  app.use(express.static(clientPath));
+// Serve frontend build
+app.use(express.static(path.join(__dirname, '..', '..', 'frontend', 'dist')));
 
-  app.get("*", (req, res) => {
-    res.sendFile(path.join(clientPath, "index.html"));
-  });
-}
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '..', '..', 'frontend', 'dist', 'index.html'));
+});
 
 // ✅ Start server
 app.listen(Number(PORT), "0.0.0.0", () => {
