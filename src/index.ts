@@ -67,7 +67,7 @@ app.use(errorMiddleware);
 
 // ✅ Optional: Serve frontend (if you build it into the same app)
 if (process.env.NODE_ENV === "production") {
-  const clientPath = path.join(__dirname, "../client/build");
+  const clientPath = path.join(__dirname, "../frontend/dist");
   app.use(express.static(clientPath));
 
   app.get("*", (req, res) => {
