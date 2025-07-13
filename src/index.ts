@@ -66,10 +66,10 @@ app.use("/comments", commentsRoutes);
 app.use(errorMiddleware);
 
 // Serve frontend build
-app.use(express.static(path.join(__dirname, '..', '..', 'frontend', 'dist')));
+app.use(express.static(path.join(__dirname, '..', 'dist')));
 
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '..', '..', 'frontend', 'dist', 'index.html'));
+  res.sendFile(path.join(__dirname, '..','dist', 'index.html'));
 });
 
 // ✅ Start server
